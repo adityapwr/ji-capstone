@@ -1,6 +1,6 @@
 terraform {
   cloud {
-    organization = "capstone-adityapwr"
+    organization = "adityapwr-capstone"
     workspaces {
       name = "ji-capstone"
     }
@@ -31,7 +31,7 @@ resource "azurerm_storage_account" "ji_capstone" {
 }
 
 resource "azurerm_mssql_server" "mysql_server" {
-  name                         = "${azurerm_resource_group.name}capstonesqlserver"
+  name                         = "${azurerm_resource_group.ji_capstone.name}capstonesqlserver"
   resource_group_name          = azurerm_resource_group.ji_capstone.name
   location                     = azurerm_resource_group.ji_capstone.location
   version                      = "12.0"
@@ -40,7 +40,7 @@ resource "azurerm_mssql_server" "mysql_server" {
 }
 
 resource "azurerm_mssql_database" "mysql_db" {
-  name           = "${azurerm_resource_group.name}capstonesqldb"
+  name           = "${azurerm_resource_group.ji_capstone.name}capstonesqldb"
   server_id      = azurerm_mssql_server.mysql_server.id
   collation      = "SQL_Latin1_General_CP1_CI_AS"
   license_type   = "LicenseIncluded"
