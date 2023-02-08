@@ -1,7 +1,13 @@
 terraform {
+  cloud {
+    organization = "capstone-adityapwr"
+    workspaces {
+      name = "ji-capstone"
+    }
+  }
   required_providers {
     azurerm = {
-      source = "hashicorp/azurerm"
+      source  = "hashicorp/azurerm"
       version = "3.42.0"
     }
   }
