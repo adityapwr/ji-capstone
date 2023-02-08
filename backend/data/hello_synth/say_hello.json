@@ -1,0 +1,32 @@
+{
+  "type": "array",
+  "length": {
+    "type": "number",
+    "constant": 100
+  },
+  "content": {
+    "type": "object",
+    "order_id": {
+      "type": "number",
+      "id": {}
+    },
+    "item": {
+      "type": "string",
+      "categorical": {
+        "t-shirt": 4,
+        "jeans": 1,
+        "jacket": 1,
+        "belt": 2
+      }
+    },
+    "timestamp": {
+      "type": "series",
+      "cyclical": {
+        "start": "2021-02-01 00:00:00",
+        "period": "5d",
+        "min_rate": "10m",
+        "max_rate": "30s"
+      }
+    }
+  }
+}

@@ -47,7 +47,7 @@ resource "azurerm_mssql_database" "mysql_db" {
   max_size_gb    = 10
   read_scale     = true
   sku_name       = "S0"
-  zone_redundant = true
+  zone_redundant = false
 
   tags = {
     Environment = "Production"
